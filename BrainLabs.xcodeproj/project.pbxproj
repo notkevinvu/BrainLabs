@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		8844D6962B7E86890089FEB7 /* BrainLabsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6952B7E86890089FEB7 /* BrainLabsApp.swift */; };
-		8844D6982B7E86890089FEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6972B7E86890089FEB7 /* ContentView.swift */; };
+		8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6972B7E86890089FEB7 /* CoreTabView.swift */; };
 		8844D69A2B7E868B0089FEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8844D6992B7E868B0089FEB7 /* Assets.xcassets */; };
 		8844D69D2B7E868B0089FEB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8844D69C2B7E868B0089FEB7 /* Preview Assets.xcassets */; };
+		8844D6AA2B8410E50089FEB7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8844D6A92B8410E50089FEB7 /* Swinject */; };
+		8844D6AC2B8410E50089FEB7 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */; };
+		8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AD2B8411C60089FEB7 /* HomeView.swift */; };
+		8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AF2B8412240089FEB7 /* AllGamesView.swift */; };
+		8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B12B84123A0089FEB7 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8844D6922B7E86890089FEB7 /* BrainLabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainLabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8844D6952B7E86890089FEB7 /* BrainLabsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainLabsApp.swift; sourceTree = "<group>"; };
-		8844D6972B7E86890089FEB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8844D6972B7E86890089FEB7 /* CoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTabView.swift; sourceTree = "<group>"; };
 		8844D6992B7E868B0089FEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8844D69C2B7E868B0089FEB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8844D6AD2B8411C60089FEB7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8844D6AF2B8412240089FEB7 /* AllGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGamesView.swift; sourceTree = "<group>"; };
+		8844D6B12B84123A0089FEB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8844D6AA2B8410E50089FEB7 /* Swinject in Frameworks */,
+				8844D6AC2B8410E50089FEB7 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +61,12 @@
 		8844D6942B7E86890089FEB7 /* BrainLabs */ = {
 			isa = PBXGroup;
 			children = (
+				8844D6A32B8410440089FEB7 /* Core */,
+				8844D6A42B8410480089FEB7 /* Data */,
+				8844D6A52B84104C0089FEB7 /* FeatureDomain */,
+				8844D6A62B84105D0089FEB7 /* Reusable Views+Extensions */,
+				8844D6A72B84107A0089FEB7 /* Utilities */,
 				8844D6952B7E86890089FEB7 /* BrainLabsApp.swift */,
-				8844D6972B7E86890089FEB7 /* ContentView.swift */,
 				8844D6992B7E868B0089FEB7 /* Assets.xcassets */,
 				8844D69B2B7E868B0089FEB7 /* Preview Content */,
 			);
@@ -65,6 +79,77 @@
 				8844D69C2B7E868B0089FEB7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8844D6A32B8410440089FEB7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8844D6B62B8414210089FEB7 /* DI */,
+				8844D6972B7E86890089FEB7 /* CoreTabView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8844D6A42B8410480089FEB7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8844D6A52B84104C0089FEB7 /* FeatureDomain */ = {
+			isa = PBXGroup;
+			children = (
+				8844D6B42B8412470089FEB7 /* AllGames */,
+				8844D6B32B84123E0089FEB7 /* Home */,
+				8844D6B52B84124F0089FEB7 /* Profile */,
+			);
+			path = FeatureDomain;
+			sourceTree = "<group>";
+		};
+		8844D6A62B84105D0089FEB7 /* Reusable Views+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Reusable Views+Extensions";
+			sourceTree = "<group>";
+		};
+		8844D6A72B84107A0089FEB7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8844D6B32B84123E0089FEB7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8844D6AD2B8411C60089FEB7 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8844D6B42B8412470089FEB7 /* AllGames */ = {
+			isa = PBXGroup;
+			children = (
+				8844D6AF2B8412240089FEB7 /* AllGamesView.swift */,
+			);
+			path = AllGames;
+			sourceTree = "<group>";
+		};
+		8844D6B52B84124F0089FEB7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8844D6B12B84123A0089FEB7 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8844D6B62B8414210089FEB7 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +168,10 @@
 			dependencies = (
 			);
 			name = BrainLabs;
+			packageProductDependencies = (
+				8844D6A92B8410E50089FEB7 /* Swinject */,
+				8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */,
+			);
 			productName = BrainLabs;
 			productReference = 8844D6922B7E86890089FEB7 /* BrainLabs.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +200,9 @@
 				Base,
 			);
 			mainGroup = 8844D6892B7E86890089FEB7;
+			packageReferences = (
+				8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 8844D6932B7E86890089FEB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8844D6982B7E86890089FEB7 /* ContentView.swift in Sources */,
+				8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */,
+				8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */,
+				8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */,
+				8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */,
 				8844D6962B7E86890089FEB7 /* BrainLabsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +439,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8844D6A92B8410E50089FEB7 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8844D68A2B7E86890089FEB7 /* Project object */;
 }
