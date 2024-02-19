@@ -11,7 +11,7 @@ import SwiftUI
 struct BrainLabsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoreTabView()
         }
     }
 }
