@@ -16,7 +16,7 @@
 		8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AD2B8411C60089FEB7 /* HomeView.swift */; };
 		8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AF2B8412240089FEB7 /* AllGamesView.swift */; };
 		8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B12B84123A0089FEB7 /* ProfileView.swift */; };
-		8844D6B92B8420D90089FEB7 /* CardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B82B8420D90089FEB7 /* CardCarouselView.swift */; };
+		8844D6B92B8420D90089FEB7 /* LargeCardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		8844D6AD2B8411C60089FEB7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8844D6AF2B8412240089FEB7 /* AllGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGamesView.swift; sourceTree = "<group>"; };
 		8844D6B12B84123A0089FEB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		8844D6B82B8420D90089FEB7 /* CardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarouselView.swift; sourceTree = "<group>"; };
+		8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCardCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		8844D6A62B84105D0089FEB7 /* Reusable Views+Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8844D6B82B8420D90089FEB7 /* CardCarouselView.swift */,
+				8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */,
 			);
 			path = "Reusable Views+Extensions";
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 				8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */,
 				8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */,
 				8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */,
-				8844D6B92B8420D90089FEB7 /* CardCarouselView.swift in Sources */,
+				8844D6B92B8420D90089FEB7 /* LargeCardCarouselView.swift in Sources */,
 				8844D6962B7E86890089FEB7 /* BrainLabsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
