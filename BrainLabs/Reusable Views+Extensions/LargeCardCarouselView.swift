@@ -24,8 +24,9 @@ var mockData: [GameModelMock] = [
 ]
 
 struct LargeCardCarouselView: View {
-    enum Constants {
-        static let cardHeight: CGFloat = 225
+    @Environment(\.colorScheme) var colorScheme
+    var foregroundColor: Color {
+        colorScheme == .light ? .black : .white
     }
     
     struct CardModel {
@@ -84,20 +85,21 @@ struct LargeCardCarouselView: View {
                 VStack {
                     cardModel.image
                         .resizable()
+                        .foregroundStyle(foregroundColor)
                         .frame(
                             width: cardModel.cardDetailSizeInfo.imageDimension,
                             height: cardModel.cardDetailSizeInfo.imageDimension)
                     
                     Text(cardModel.title)
                         .font(.title.bold())
+                        .foregroundStyle(foregroundColor)
                         
                     Text(cardModel.subtitle ?? "")
-                        .font(.subheadline.weight(.medium))
-                }
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(foregroundColor)
+                } // vstack
                 .padding(.horizontal, 30)
-            }
-        
-        
+            } // overlay
     }
     
     private func getCardDetailSizeInformationFrom(_ geometryReader: GeometryProxy) -> CardDetailSizeInformation {
@@ -105,7 +107,8 @@ struct LargeCardCarouselView: View {
         let cardWidth = frameWidth * 0.95
         let cardHorizontalPadding = (frameWidth - cardWidth) / 2
         
-        let imageDimension = Constants.cardHeight * 0.4
+        // base image on card width since the height might be too variable for our tastes
+        let imageDimension = cardWidth * 0.3
         
         return .init(
             cardWidth: cardWidth,
