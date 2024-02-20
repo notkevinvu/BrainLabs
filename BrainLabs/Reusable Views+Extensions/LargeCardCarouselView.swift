@@ -76,6 +76,7 @@ struct LargeCardCarouselView: View {
     
     @ViewBuilder
     func titleSubtitleImageLargeCardView(cardModel: CardModel) -> some View {
+        #warning("Update color to correspond to a specific game")
         RoundedRectangle(cornerRadius: 25)
             .fill(
                 Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)).gradient
@@ -118,7 +119,6 @@ struct LargeCardCarouselView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .fixedLayout(width: 393, height: 225)) {
     LargeCardCarouselView()
-        .previewLayout(.sizeThatFits)
 }
