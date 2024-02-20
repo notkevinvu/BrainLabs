@@ -52,7 +52,7 @@ struct LargeCardCarouselView: View {
     @ViewBuilder
     func carouselScrollView(cardDetailSizeInformation: CardDetailSizeInformation) -> some View {
         ScrollView(.horizontal) {
-            LazyHStack(spacing: 10) {
+            HStack(spacing: 10) {
                 ForEach(mockData) { gameModel in
                     titleSubtitleImageLargeCardView(
                         cardModel: .init(
