@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("Remove mock model and data, add specific colors to each game when creating actual models")
 struct GameModelMock: Identifiable {
     var id = UUID()
     var title: String
