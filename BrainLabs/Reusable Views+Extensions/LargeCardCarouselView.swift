@@ -31,24 +31,25 @@ struct LargeCardCarouselView: View {
         let title: String
         let subtitle: String?
         let image: Image
+        let cardDetailSizeInfo: CardDetailSizeInformation
+    }
+    
+    struct CardDetailSizeInformation {
         let cardWidth: CGFloat
+        let cardHorizontalPadding: CGFloat
+        let imageDimension: CGFloat
     }
     
     var body: some View {
         GeometryReader { geometry in
-            let frameSize = geometry.size
-            let cardWidth = frameSize.width * 0.85
-            let cardHorizontalPadding = (frameSize.width - cardWidth) / 2
+            let cardDetailSizeInformation = getCardDetailSizeInformationFrom(geometry)
             
-            carouselScrollView(
-                cardWidth: cardWidth,
-                cardHorizontalPadding: cardHorizontalPadding
-            )
+            carouselScrollView(cardDetailSizeInformation: cardDetailSizeInformation)
         }
     }
     
     @ViewBuilder
-    func carouselScrollView(cardWidth: CGFloat, cardHorizontalPadding: CGFloat) -> some View {
+    func carouselScrollView(cardDetailSizeInformation: CardDetailSizeInformation) -> some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 10) {
                 ForEach(mockData) { gameModel in
@@ -57,25 +58,55 @@ struct LargeCardCarouselView: View {
                             title: gameModel.title,
                             subtitle: gameModel.subtitle,
                             image: gameModel.placeholderImage,
-                            cardWidth: cardWidth
-                        )
-                    ) // card view
+                            cardDetailSizeInfo: cardDetailSizeInformation))
+                    
                 } // for each
             } // lazy HStack
             .scrollTargetLayout()
         } // scroll view
         .scrollTargetBehavior(.viewAligned)
-        .safeAreaPadding(.horizontal, cardHorizontalPadding)
+        .safeAreaPadding(.horizontal, cardDetailSizeInformation.cardHorizontalPadding)
         .scrollIndicators(.hidden)
     }
     
     @ViewBuilder
     func titleSubtitleImageLargeCardView(cardModel: CardModel) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)))
-                .frame(width: cardModel.cardWidth, height: Constants.cardHeight)
-        } // zstack
+        RoundedRectangle(cornerRadius: 25)
+            .fill(
+                Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)).gradient
+            )
+            .frame(width: cardModel.cardDetailSizeInfo.cardWidth, height: Constants.cardHeight)
+            .overlay {
+                VStack {
+                    cardModel.image
+                        .resizable()
+                        .frame(
+                            width: cardModel.cardDetailSizeInfo.imageDimension,
+                            height: cardModel.cardDetailSizeInfo.imageDimension)
+                    
+                    Text(cardModel.title)
+                        .font(.title.bold())
+                        
+                    Text(cardModel.subtitle ?? "")
+                        .font(.subheadline.weight(.medium))
+                }
+                .padding(.horizontal, 30)
+            }
+        
+        
+    }
+    
+    private func getCardDetailSizeInformationFrom(_ geometryReader: GeometryProxy) -> CardDetailSizeInformation {
+        let frameWidth = geometryReader.size.width
+        let cardWidth = frameWidth * 0.8
+        let cardHorizontalPadding = (frameWidth - cardWidth) / 2
+        
+        let imageDimension = Constants.cardHeight * 0.4
+        
+        return .init(
+            cardWidth: cardWidth,
+            cardHorizontalPadding: cardHorizontalPadding,
+            imageDimension: imageDimension)
     }
 }
 
