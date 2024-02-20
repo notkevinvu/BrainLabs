@@ -66,6 +66,8 @@ struct LargeCardCarouselView: View {
             .scrollTargetLayout()
         } // scroll view
         .scrollTargetBehavior(.viewAligned)
+        // allows for parent padding while also not clipping overflow from padding
+        .scrollClipDisabled()
         .safeAreaPadding(.horizontal, cardDetailSizeInformation.cardHorizontalPadding)
         .scrollIndicators(.hidden)
     }
