@@ -26,7 +26,8 @@ var mockData: [GameModelMock] = [
 struct LargeCardCarouselView: View {
     @Environment(\.colorScheme) var colorScheme
     var foregroundColor: Color {
-        colorScheme == .light ? .black : .white
+//        colorScheme == .light ? .black : .white
+        .white
     }
     
     struct CardModel {
