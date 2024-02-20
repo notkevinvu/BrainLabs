@@ -38,6 +38,7 @@ struct LargeCardCarouselView: View {
     struct CardDetailSizeInformation {
         let cardWidth: CGFloat
         let cardHorizontalPadding: CGFloat
+        let containerHeight: CGFloat
         let imageDimension: CGFloat
     }
     
@@ -78,7 +79,7 @@ struct LargeCardCarouselView: View {
             .fill(
                 Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)).gradient
             )
-            .frame(width: cardModel.cardDetailSizeInfo.cardWidth, height: Constants.cardHeight)
+            .frame(width: cardModel.cardDetailSizeInfo.cardWidth, height: cardModel.cardDetailSizeInfo.containerHeight)
             .overlay {
                 VStack {
                     cardModel.image
@@ -101,7 +102,7 @@ struct LargeCardCarouselView: View {
     
     private func getCardDetailSizeInformationFrom(_ geometryReader: GeometryProxy) -> CardDetailSizeInformation {
         let frameWidth = geometryReader.size.width
-        let cardWidth = frameWidth * 0.8
+        let cardWidth = frameWidth * 0.95
         let cardHorizontalPadding = (frameWidth - cardWidth) / 2
         
         let imageDimension = Constants.cardHeight * 0.4
@@ -109,6 +110,7 @@ struct LargeCardCarouselView: View {
         return .init(
             cardWidth: cardWidth,
             cardHorizontalPadding: cardHorizontalPadding,
+            containerHeight: geometryReader.size.height,
             imageDimension: imageDimension)
     }
 }
