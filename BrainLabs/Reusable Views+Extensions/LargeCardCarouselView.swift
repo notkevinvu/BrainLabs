@@ -19,7 +19,7 @@ var mockData: [GameModelMock] = [
     .init(title: "Aim trainer", subtitle: "Test your hand eye coordination and reaction."),
     .init(title: "Chimp test", subtitle: "Monkey see, monkey do."),
     .init(title: "Texting", subtitle: "How fast can you type up that story to your friend?"),
-    .init(title: "Number memory", subtitle: "In this case, the longer the number, the better it is.")
+    .init(title: "Number memory", subtitle: "In this case, bigger is better.")
 ]
 
 struct LargeCardCarouselView: View {
