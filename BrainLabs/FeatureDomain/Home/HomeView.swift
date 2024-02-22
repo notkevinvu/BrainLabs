@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         ScrollView(.vertical) {
             VStack(spacing: 20) {
@@ -15,9 +16,18 @@ struct HomeView: View {
                     .font(.largeTitle.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                // TODO: Make this text copy a card?
-                Text("Welcome back! Revisit your favorites, explore new games, or check out your highlights and stats!")
-                    .font(.callout)
+                ZStack(alignment: .leading, content: {
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundStyle(.gray.gradient)
+                        .brightness(0.4)
+                        .defaultShadow()
+                    
+                    Text("Welcome back! Revisit your favorites, explore new games, or check out your highlights and stats!")
+                        .font(.headline)
+                        .foregroundStyle(.black)
+                        .padding(15)
+                })
                 
                 carouselSection(title: "Recents")
                 carouselSection(title: "Try something new")
@@ -35,6 +45,7 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             LargeCardCarouselView()
                 .frame(minHeight: 225)
+                .defaultShadow()
         }
     }
 }
