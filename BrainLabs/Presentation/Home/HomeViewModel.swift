@@ -49,26 +49,19 @@ final class HomeViewModel {
     private func buildSections() {
         viewState = .loading
         
+        /*
+         TODO: Add logic to see if favorite games array is empty
+         
+         If so, we'll need some extra logic to update viewState to the
+         `.emptyFavorites` case and handle view accordingly.
+         */
         let favoriteGames = recommendationsProvider.getFavorites()
         let newRecommendations = recommendationsProvider.getNewRecommendations()
         
         homeViewSections.append(.init(title: "Favorites", gameModels: favoriteGames))
         homeViewSections.append(.init(title: "Try something new", gameModels: newRecommendations))
+        
+        viewState = .success
     }
 }
 
-#warning("Remove mock model and data, add specific colors to each game when creating actual models")
-struct GameModelMock: Identifiable {
-    var id = UUID()
-    var title: String
-    var subtitle: String
-    
-    let placeholderImage = Image(systemName: "brain.filled.head.profile")
-}
-
-var mockData: [GameModelMock] = [
-    .init(title: "Aim trainer", subtitle: "Test your hand eye coordination and reaction."),
-    .init(title: "Chimp test", subtitle: "Monkey see, monkey do."),
-    .init(title: "Texting", subtitle: "How fast can you type up that story to your friend?"),
-    .init(title: "Number memory", subtitle: "In this case, bigger is better.")
-]

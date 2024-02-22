@@ -42,12 +42,13 @@ struct LargeCardCarouselView: View {
     func carouselScrollView(cardDetailSizeInformation: CardDetailSizeInformation) -> some View {
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
-                ForEach(mockData) { gameModel in
+                ForEach(cardModels) { gameModel in
                     titleSubtitleImageLargeCardView(
                         cardModel: .init(
+                            id: gameModel.id,
                             title: gameModel.title,
                             subtitle: gameModel.subtitle,
-                            image: gameModel.placeholderImage),
+                            image: gameModel.image),
                         cardDetailSizeInfo: cardDetailSizeInformation
                     )
                     
@@ -110,5 +111,5 @@ struct LargeCardCarouselView: View {
 }
 
 #Preview(traits: .fixedLayout(width: 393, height: 225)) {
-    LargeCardCarouselView()
+    LargeCardCarouselView(cardModels: mockRecommendationsModels.map { $0.toCarouselViewCardModel() } )
 }

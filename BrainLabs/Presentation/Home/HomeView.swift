@@ -20,7 +20,7 @@ struct HomeView: View {
                 welcomeText
                 
                 ForEach(homeViewModel.homeViewSections) { section in
-                    carouselSection(title: section.title)
+                    carouselSection(title: section.title, gameModels: section.gameModels)
                 }
             } // vstack
             .padding(20)
@@ -44,12 +44,12 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    func carouselSection(title: String) -> some View {
+    func carouselSection(title: String, gameModels: [GameModel]) -> some View {
         VStack(spacing: 10) {
             Text(title)
-                .font(.title.bold())
+                .font(.title2.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-            LargeCardCarouselView()
+            LargeCardCarouselView(cardModels: gameModels.map { $0.toCarouselViewCardModel() })
                 .frame(minHeight: 225)
                 .defaultShadow()
         }
