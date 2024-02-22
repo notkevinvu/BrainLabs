@@ -16,18 +16,7 @@ struct HomeView: View {
                     .font(.largeTitle.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                ZStack(alignment: .leading, content: {
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundStyle(.gray.gradient)
-                        .brightness(0.4)
-                        .defaultShadow()
-                    
-                    Text("Welcome back! Revisit your favorites, explore new games, or check out your highlights and stats!")
-                        .font(.headline)
-                        .foregroundStyle(.black)
-                        .padding(15)
-                })
+                welcomeText
                 
                 carouselSection(title: "Recents")
                 carouselSection(title: "Try something new")
@@ -35,6 +24,21 @@ struct HomeView: View {
             .padding(20)
         } // scrollview
         .scrollIndicators(.hidden)
+    }
+    
+    @ViewBuilder
+    var welcomeText: some View {
+        ZStack(alignment: .leading, content: {
+            RoundedRectangle(cornerRadius: 25)
+                .foregroundStyle(.gray.gradient)
+                .brightness(0.4)
+                .defaultShadow()
+            
+            Text("Welcome back to the lab! Revisit your favorites, explore new games, or check out your highlights and stats!")
+                .font(.headline)
+                .foregroundStyle(.black)
+                .padding(15)
+        })
     }
     
     @ViewBuilder
