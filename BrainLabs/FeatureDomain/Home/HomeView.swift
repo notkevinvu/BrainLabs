@@ -16,7 +16,7 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // TODO: Make this text copy a card?
-                Text("Welcome back! See your recent games, try something new, or quickly see your highlights!")
+                Text("Welcome back! Revisit your favorites, explore new games, or check out your highlights and stats!")
                     .font(.callout)
                 
                 carouselSection(title: "Recents")
@@ -24,6 +24,7 @@ struct HomeView: View {
             } // vstack
             .padding(20)
         } // scrollview
+        .scrollIndicators(.hidden)
     }
     
     @ViewBuilder
