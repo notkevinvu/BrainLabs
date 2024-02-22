@@ -13,3 +13,9 @@ struct GameModel: Identifiable {
     let subtitle: String
     let image = Image(systemName: "brain.filled.head.profile")
 }
+
+extension GameModel {
+    func toCarouselViewCardModel() -> LargeCardCarouselView.CardModel {
+        return .init(id: self.id, title: self.title, subtitle: self.subtitle, image: self.image)
+    }
+}

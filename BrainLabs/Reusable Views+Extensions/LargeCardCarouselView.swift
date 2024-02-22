@@ -14,7 +14,10 @@ struct LargeCardCarouselView: View {
         .white
     }
     
-    struct CardModel {
+    let cardModels: [CardModel]
+    
+    struct CardModel: Identifiable {
+        let id: UUID
         let title: String
         let subtitle: String?
         let image: Image
