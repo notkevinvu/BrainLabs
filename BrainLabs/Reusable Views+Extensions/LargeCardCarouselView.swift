@@ -18,7 +18,6 @@ struct LargeCardCarouselView: View {
         let title: String
         let subtitle: String?
         let image: Image
-        let cardDetailSizeInfo: CardDetailSizeInformation
     }
     
     struct CardDetailSizeInformation {
@@ -45,8 +44,9 @@ struct LargeCardCarouselView: View {
                         cardModel: .init(
                             title: gameModel.title,
                             subtitle: gameModel.subtitle,
-                            image: gameModel.placeholderImage,
-                            cardDetailSizeInfo: cardDetailSizeInformation))
+                            image: gameModel.placeholderImage),
+                        cardDetailSizeInfo: cardDetailSizeInformation
+                    )
                     
                 } // for each
             } // lazy HStack
@@ -60,13 +60,13 @@ struct LargeCardCarouselView: View {
     }
     
     @ViewBuilder
-    func titleSubtitleImageLargeCardView(cardModel: CardModel) -> some View {
+    func titleSubtitleImageLargeCardView(cardModel: CardModel, cardDetailSizeInfo: CardDetailSizeInformation) -> some View {
         #warning("Update color to correspond to a specific game")
         RoundedRectangle(cornerRadius: 25)
             .fill(
                 Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)).gradient
             )
-            .frame(width: cardModel.cardDetailSizeInfo.cardWidth, height: cardModel.cardDetailSizeInfo.containerHeight)
+            .frame(width: cardDetailSizeInfo.cardWidth, height: cardDetailSizeInfo.containerHeight)
             .overlay {
                 VStack {
                     // TODO: Handle cases for dynamic text for XXL and onwards
@@ -75,8 +75,8 @@ struct LargeCardCarouselView: View {
                         .resizable()
                         .foregroundStyle(foregroundColor)
                         .frame(
-                            width: cardModel.cardDetailSizeInfo.imageDimension,
-                            height: cardModel.cardDetailSizeInfo.imageDimension)
+                            width: cardDetailSizeInfo.imageDimension,
+                            height: cardDetailSizeInfo.imageDimension)
                     
                     Text(cardModel.title)
                         .font(.title.bold())
