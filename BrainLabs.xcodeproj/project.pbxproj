@@ -12,12 +12,24 @@
 		8844D69A2B7E868B0089FEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8844D6992B7E868B0089FEB7 /* Assets.xcassets */; };
 		8844D69D2B7E868B0089FEB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8844D69C2B7E868B0089FEB7 /* Preview Assets.xcassets */; };
 		8844D6AA2B8410E50089FEB7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8844D6A92B8410E50089FEB7 /* Swinject */; };
-		8844D6AC2B8410E50089FEB7 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */; };
 		8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AD2B8411C60089FEB7 /* HomeView.swift */; };
 		8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6AF2B8412240089FEB7 /* AllGamesView.swift */; };
 		8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B12B84123A0089FEB7 /* ProfileView.swift */; };
 		8844D6B92B8420D90089FEB7 /* LargeCardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8875D2802B8557530014CA9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8844D6922B7E86890089FEB7 /* BrainLabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainLabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8844D6AA2B8410E50089FEB7 /* Swinject in Frameworks */,
-				8844D6AC2B8410E50089FEB7 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +176,7 @@
 				8844D68E2B7E86890089FEB7 /* Sources */,
 				8844D68F2B7E86890089FEB7 /* Frameworks */,
 				8844D6902B7E86890089FEB7 /* Resources */,
+				8875D2802B8557530014CA9C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,7 +185,6 @@
 			name = BrainLabs;
 			packageProductDependencies = (
 				8844D6A92B8410E50089FEB7 /* Swinject */,
-				8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */,
 			);
 			productName = BrainLabs;
 			productReference = 8844D6922B7E86890089FEB7 /* BrainLabs.app */;
@@ -466,11 +477,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		8844D6AB2B8410E50089FEB7 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8844D6A82B8410E50089FEB7 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
