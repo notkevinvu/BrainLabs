@@ -84,7 +84,8 @@
 			children = (
 				8844D6A32B8410440089FEB7 /* Core */,
 				8844D6A42B8410480089FEB7 /* Data */,
-				8844D6A52B84104C0089FEB7 /* FeatureDomain */,
+				8875D2852B87E3550014CA9C /* Domain */,
+				8844D6A52B84104C0089FEB7 /* Presentation */,
 				8844D6A62B84105D0089FEB7 /* Reusable Views+Extensions */,
 				8844D6A72B84107A0089FEB7 /* Utilities */,
 				8844D6952B7E86890089FEB7 /* BrainLabsApp.swift */,
@@ -118,14 +119,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		8844D6A52B84104C0089FEB7 /* FeatureDomain */ = {
+		8844D6A52B84104C0089FEB7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				8844D6B42B8412470089FEB7 /* AllGames */,
 				8844D6B32B84123E0089FEB7 /* Home */,
 				8844D6B52B84124F0089FEB7 /* Profile */,
 			);
-			path = FeatureDomain;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		8844D6A62B84105D0089FEB7 /* Reusable Views+Extensions */ = {
