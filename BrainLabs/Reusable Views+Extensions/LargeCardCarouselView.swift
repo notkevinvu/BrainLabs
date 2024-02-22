@@ -85,6 +85,8 @@ struct LargeCardCarouselView: View {
             .frame(width: cardModel.cardDetailSizeInfo.cardWidth, height: cardModel.cardDetailSizeInfo.containerHeight)
             .overlay {
                 VStack {
+                    // TODO: Handle cases for dynamic text for XXL and onwards
+                    // put a max size for the image?
                     cardModel.image
                         .resizable()
                         .foregroundStyle(foregroundColor)
