@@ -35,7 +35,7 @@ struct HomeView: View {
                 .brightness(0.4)
                 .defaultShadow()
             
-            Text("Welcome back to the lab! Revisit your favorites, explore new games, or check out your highlights and stats!")
+            Text(homeViewModel.welcomeText)
                 .font(.headline)
                 .foregroundStyle(.black)
                 .padding(15)
