@@ -49,7 +49,9 @@ struct HomeView: View {
             Text(title)
                 .font(.title2.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-            LargeCardCarouselView(cardModels: gameModels.map { $0.toCarouselViewCardModel() })
+            LargeCardCarouselView(
+                cardModels: gameModels.map { $0.toCarouselViewCardModel() }
+            )
                 .frame(minHeight: 225)
                 .defaultShadow()
         }
