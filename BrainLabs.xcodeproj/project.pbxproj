@@ -17,6 +17,7 @@
 		8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B12B84123A0089FEB7 /* ProfileView.swift */; };
 		8844D6B92B8420D90089FEB7 /* LargeCardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */; };
 		8875D2822B87CAFD0014CA9C /* DefaultShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2812B87CAFD0014CA9C /* DefaultShadowModifier.swift */; };
+		8875D2842B87D03C0014CA9C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2832B87D03C0014CA9C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		8844D6B12B84123A0089FEB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8844D6B82B8420D90089FEB7 /* LargeCardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCardCarouselView.swift; sourceTree = "<group>"; };
 		8875D2812B87CAFD0014CA9C /* DefaultShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultShadowModifier.swift; sourceTree = "<group>"; };
+		8875D2832B87D03C0014CA9C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				8844D6AD2B8411C60089FEB7 /* HomeView.swift */,
+				8875D2832B87D03C0014CA9C /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				8875D2822B87CAFD0014CA9C /* DefaultShadowModifier.swift in Sources */,
 				8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */,
 				8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */,
+				8875D2842B87D03C0014CA9C /* HomeViewModel.swift in Sources */,
 				8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */,
 				8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */,
 				8844D6B92B8420D90089FEB7 /* LargeCardCarouselView.swift in Sources */,
