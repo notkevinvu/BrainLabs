@@ -6,13 +6,37 @@
 //
 
 import Foundation
+// TODO: Remove swiftui once we finish with the model mocks
+import SwiftUI
 
 @Observable
 final class HomeViewModel {
     var welcomeText: String = "Welcome back to the lab! Revisit your favorites, explore new games, or check out your highlights and stats!"
+    var homeViewSections: [HomeSectionModel] = []
     
+    enum ViewState {
+        case initial
+        case loading
+        case success
+        case empty
+        case failure
+    }
     
+    struct HomeSectionModel: Identifiable {
+        let id = UUID()
+        let title: String
+    }
+    
+    init() {
+        buildSections()
+    }
+    
+    private func buildSections() {
+        homeViewSections.append(.init(title: "Recents"))
+        homeViewSections.append(.init(title: "Try something new"))
+    }
 }
+
 #warning("Remove mock model and data, add specific colors to each game when creating actual models")
 struct GameModelMock: Identifiable {
     var id = UUID()

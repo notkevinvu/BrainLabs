@@ -19,8 +19,9 @@ struct HomeView: View {
                 
                 welcomeText
                 
-                carouselSection(title: "Recents")
-                carouselSection(title: "Try something new")
+                ForEach(homeViewModel.homeViewSections) { section in
+                    carouselSection(title: section.title)
+                }
             } // vstack
             .padding(20)
         } // scrollview
