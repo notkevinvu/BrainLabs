@@ -26,6 +26,7 @@ struct HomeView: View {
             .padding(20)
         } // scrollview
         .scrollIndicators(.hidden)
+        .contentMargins(.bottom, 60, for: .scrollContent)
     }
     
     @ViewBuilder
