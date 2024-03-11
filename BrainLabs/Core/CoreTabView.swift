@@ -10,7 +10,7 @@ import SwiftUI
 struct CoreTabView: View {
     var body: some View {
         TabView {
-            HomeView()
+            HomeView(homeViewModel: DIContainer.shared.resolve(HomeViewModel.self))
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }

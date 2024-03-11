@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var homeViewModel = HomeViewModel()
+    @State var homeViewModel: HomeViewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -59,5 +59,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(homeViewModel: DIContainer.shared.resolve(HomeViewModel.self))
 }
