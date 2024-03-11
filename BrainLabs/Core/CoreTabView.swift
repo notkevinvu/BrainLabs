@@ -32,44 +32,37 @@ struct CoreTabView: View {
     }
     
     var body: some View {
-        ZStack {
-            VStack {
-                TabView {
-                    HomeView(homeViewModel: DIContainer.shared.resolve(HomeViewModel.self))
-                        .tabItem {
-                            Label("Home", systemImage: "house")
-                        }
-                    
-                    AllGamesView()
-                        .tabItem {
-                            Label("Games", systemImage: "square.grid.3x3.fill")
-                        }
-                    
-                    ProfileView()
-                        .tabItem {
-                            Label("Profile", systemImage: "person")
-                        }
-                }
-            }
-            
-            VStack {
-                Spacer()
+        defaultTabView
+            .overlay(alignment: .bottom) {
                 CustomTabView(selectedTab: $selectedTab)
             }
+    }
+    
+    @ViewBuilder
+    var defaultTabView: some View {
+        TabView(selection: $selectedTab) {
+            HomeView(homeViewModel: DIContainer.shared.resolve(HomeViewModel.self))
+                .tag(Tab.home)
+            
+            AllGamesView()
+                .tag(Tab.games)
+            
+            ProfileView()
+                .tag(Tab.profile)
         }
     }
 }
 
-struct CustomTabView: View {
-    @Environment(\.verticalSizeClass) var verticalSizeClass
+/// Custom floating tab view with scale effect animations.
+///
+/// References:
+/// * https://www.youtube.com/watch?v=vzQDKYIKEb8
+/// * https://www.youtube.com/watch?v=Yg3cmpKNieU
+fileprivate struct CustomTabView: View {
     @Binding var selectedTab: Tab
     
     private var fillImage: String {
         selectedTab.symbolName + ".fill"
-    }
-    
-    private var bottomPadding: CGFloat {
-        verticalSizeClass == .compact ? 5 : 0
     }
     
     var body: some View {
@@ -77,7 +70,7 @@ struct CustomTabView: View {
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     let isSelectedTab = selectedTab == tab
-                    let foregroundColor: Color = isSelectedTab ? .red : .gray
+                    let foregroundColor: Color = isSelectedTab ? .blue: .gray
                     
                     Spacer()
                     
