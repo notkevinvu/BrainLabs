@@ -21,6 +21,7 @@
 		8875D2872B87E3870014CA9C /* RecommendationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */; };
 		8875D2892B87E48F0014CA9C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2882B87E48F0014CA9C /* GameModel.swift */; };
 		8875D2912B9F7E330014CA9C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2902B9F7E330014CA9C /* DIContainer.swift */; };
+		8875D2932B9FA1660014CA9C /* SafeAreaBottomPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2922B9FA1660014CA9C /* SafeAreaBottomPadding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsProvider.swift; sourceTree = "<group>"; };
 		8875D2882B87E48F0014CA9C /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8875D2902B9F7E330014CA9C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		8875D2922B9FA1660014CA9C /* SafeAreaBottomPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaBottomPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		8844D6A72B84107A0089FEB7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8875D2922B9FA1660014CA9C /* SafeAreaBottomPadding.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */,
 				8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */,
 				8875D2842B87D03C0014CA9C /* HomeViewModel.swift in Sources */,
+				8875D2932B9FA1660014CA9C /* SafeAreaBottomPadding.swift in Sources */,
 				8875D2892B87E48F0014CA9C /* GameModel.swift in Sources */,
 				8844D6B22B84123A0089FEB7 /* ProfileView.swift in Sources */,
 				8844D6B02B8412240089FEB7 /* AllGamesView.swift in Sources */,
