@@ -57,9 +57,10 @@ struct LargeCardCarouselView: View {
             .scrollTargetLayout()
         } // scroll view
         .scrollTargetBehavior(.viewAligned)
+        // not sure what the difference between this and .safeAreaPadding is
+        .contentMargins(.horizontal, cardDetailSizeInformation.cardHorizontalPadding, for: .scrollContent)
         // allows for parent padding while also not clipping overflow from padding
         .scrollClipDisabled()
-        .safeAreaPadding(.horizontal, cardDetailSizeInformation.cardHorizontalPadding)
         .scrollIndicators(.hidden)
     }
     
