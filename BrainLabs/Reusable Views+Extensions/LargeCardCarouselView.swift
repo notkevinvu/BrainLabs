@@ -24,7 +24,7 @@ struct LargeCardCarouselView: View {
     }
     
     struct CardDetailSizeInformation {
-        let cardWidth: CGFloat
+        static let cardRelativeWidth: CGFloat = 0.95
         let cardHorizontalPadding: CGFloat
         let containerHeight: CGFloat
         let imageDimension: CGFloat
@@ -43,7 +43,7 @@ struct LargeCardCarouselView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
                 ForEach(cardModels) { gameModel in
-                    titleSubtitleImageLargeCardView(
+                    largeCardView(
                         cardModel: .init(
                             id: gameModel.id,
                             title: gameModel.title,
@@ -65,46 +65,51 @@ struct LargeCardCarouselView: View {
     }
     
     @ViewBuilder
-    func titleSubtitleImageLargeCardView(cardModel: CardModel, cardDetailSizeInfo: CardDetailSizeInformation) -> some View {
+    func largeCardView(cardModel: CardModel, cardDetailSizeInfo: CardDetailSizeInformation) -> some View {
         #warning("Update color to correspond to a specific game")
         RoundedRectangle(cornerRadius: 25)
             .fill(
                 Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1)).gradient
             )
-            .frame(width: cardDetailSizeInfo.cardWidth, height: cardDetailSizeInfo.containerHeight)
+            .containerRelativeFrame(.horizontal)
             .overlay {
-                VStack {
-                    // TODO: Handle cases for dynamic text for XXL and onwards
-                    // put a max size for the image?
-                    cardModel.image
-                        .resizable()
-                        .foregroundStyle(foregroundColor)
-                        .frame(
-                            width: cardDetailSizeInfo.imageDimension,
-                            height: cardDetailSizeInfo.imageDimension)
-                    
-                    Text(cardModel.title)
-                        .font(.title.bold())
-                        .foregroundStyle(foregroundColor)
-                        
-                    Text(cardModel.subtitle ?? "")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(foregroundColor)
-                } // vstack
-                .padding(.horizontal, 30)
+                titleSubtitleImageOverlayView(cardModel: cardModel, cardDetailSizeInfo: cardDetailSizeInfo)
             } // overlay
+    }
+    
+    @ViewBuilder
+    func titleSubtitleImageOverlayView(cardModel: CardModel, cardDetailSizeInfo: CardDetailSizeInformation) -> some View {
+        VStack {
+            cardModel.image
+                .resizable()
+                .foregroundStyle(foregroundColor)
+                .frame(
+                    idealWidth: cardDetailSizeInfo.imageDimension,
+                    maxWidth: cardDetailSizeInfo.imageDimension,
+                    idealHeight: cardDetailSizeInfo.imageDimension,
+                    maxHeight: cardDetailSizeInfo.imageDimension
+                )
+            
+            Text(cardModel.title)
+                .font(.title.bold())
+                .foregroundStyle(foregroundColor)
+                
+            Text(cardModel.subtitle ?? "")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(foregroundColor)
+        } // vstack
+        .padding(.horizontal, 30)
     }
     
     private func getCardDetailSizeInformationFrom(_ geometryReader: GeometryProxy) -> CardDetailSizeInformation {
         let frameWidth = geometryReader.size.width
-        let cardWidth = frameWidth * 0.95
+        let cardWidth = frameWidth * CardDetailSizeInformation.cardRelativeWidth
         let cardHorizontalPadding = (frameWidth - cardWidth) / 2
         
         // base image on card width since the height might be too variable for our tastes
         let imageDimension = cardWidth * 0.3
         
         return .init(
-            cardWidth: cardWidth,
             cardHorizontalPadding: cardHorizontalPadding,
             containerHeight: geometryReader.size.height,
             imageDimension: imageDimension)
