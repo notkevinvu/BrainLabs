@@ -55,6 +55,6 @@ extension DIContainer {
                 recommendationsProvider: resolver.resolve(RecommendationsProvider.self)!
             )
         }
-        .inObjectScope(.transient)
+        .inObjectScope(.container)
     }
 }
