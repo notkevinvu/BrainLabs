@@ -26,6 +26,10 @@ struct HomeView: View {
             .padding(20)
         } // scrollview
         .scrollIndicators(.hidden)
+        /*
+         IMPORTANT: Content margins added here to account for potential
+         overlap with the custom tab view. 
+         */
         .contentMargins(.bottom, 60, for: .scrollContent)
     }
     
