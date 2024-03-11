@@ -20,6 +20,7 @@
 		8875D2842B87D03C0014CA9C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2832B87D03C0014CA9C /* HomeViewModel.swift */; };
 		8875D2872B87E3870014CA9C /* RecommendationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */; };
 		8875D2892B87E48F0014CA9C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2882B87E48F0014CA9C /* GameModel.swift */; };
+		8875D2912B9F7E330014CA9C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875D2902B9F7E330014CA9C /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		8875D2832B87D03C0014CA9C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsProvider.swift; sourceTree = "<group>"; };
 		8875D2882B87E48F0014CA9C /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		8875D2902B9F7E330014CA9C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		8844D6B62B8414210089FEB7 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				8875D2902B9F7E330014CA9C /* DIContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8875D2872B87E3870014CA9C /* RecommendationsProvider.swift in Sources */,
+				8875D2912B9F7E330014CA9C /* DIContainer.swift in Sources */,
 				8875D2822B87CAFD0014CA9C /* DefaultShadowModifier.swift in Sources */,
 				8844D6AE2B8411C60089FEB7 /* HomeView.swift in Sources */,
 				8844D6982B7E86890089FEB7 /* CoreTabView.swift in Sources */,
