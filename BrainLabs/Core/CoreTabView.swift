@@ -98,7 +98,7 @@ struct CustomTabView: View {
             .background(.thinMaterial)
             .clipShape(.rect(cornerRadius: 10))
             .padding(.horizontal)
-            .safeAreaPadding(.bottom, bottomPadding)
+            .safeAreaBottomPadding()
         }
     }
 }
