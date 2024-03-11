@@ -29,7 +29,8 @@ final class HomeViewModel {
     /// However, we might have a scenario where a new user opens the home page and 
     /// thus has no favorites since they are new
     enum ViewState {
-        case initial // show shimmering effect here if possible
+        case initial
+        #warning("TODO: Add shimmering effect to loading state")
         case loading
         case success
         case emptyFavorites
