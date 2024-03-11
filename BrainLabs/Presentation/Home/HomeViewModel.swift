@@ -11,7 +11,7 @@ import Foundation
 final class HomeViewModel {
     let recommendationsProvider: RecommendationsProvider
     
-    var welcomeText: String = "Welcome back to the lab! Revisit your favorites, explore new games, or check out your highlights and stats!"
+    let welcomeText: String = "Welcome back to the lab! Revisit your favorites, explore new games, or check out your highlights and stats!"
     var homeViewSections: [HomeSectionModel] = []
     var viewState: ViewState = .initial
     
@@ -44,7 +44,7 @@ final class HomeViewModel {
         let gameModels: [GameModel]
     }
     
-    init(recommendationsProvider: RecommendationsProvider = RecommendationsProviderImpl()) {
+    init(recommendationsProvider: RecommendationsProvider) {
         self.recommendationsProvider = recommendationsProvider
         buildSections()
     }
