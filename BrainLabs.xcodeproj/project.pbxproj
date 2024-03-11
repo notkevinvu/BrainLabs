@@ -180,10 +180,26 @@
 		8875D2852B87E3550014CA9C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */,
-				8875D2882B87E48F0014CA9C /* GameModel.swift */,
+				8875D28F2B9F7CFB0014CA9C /* Providers */,
+				8875D28E2B9F7CF50014CA9C /* Models */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		8875D28E2B9F7CF50014CA9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8875D2882B87E48F0014CA9C /* GameModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8875D28F2B9F7CFB0014CA9C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				8875D2862B87E3870014CA9C /* RecommendationsProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
